@@ -11,7 +11,7 @@ RUN \
     echo "deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen" | tee /etc/apt/sources.list.d/mongodb.list
 
 RUN apt-get update \
-    && apt-get install cron mysql-client mongodb-org-tools \
+    && apt-get install -y cron mysql-client mongodb-org-tools \
     && apt-get autoremove -y -qq \
     && apt-get clean -qq
 
