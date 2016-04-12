@@ -17,7 +17,8 @@ RUN apt-get update \
 
 RUN backup generate:config
 
-ADD start.sh /opt/
+
+ADD entrypoint.sh /opt/
 ADD schedule.rb /Backup/
 
 WORKDIR /Backup
