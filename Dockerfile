@@ -13,7 +13,7 @@ RUN apt-get update \
 RUN backup generate:config
 
 ADD entrypoint.sh /opt/
-ONBUILD ADD schedule.rb /root/Backup/
+ADD schedule.rb /root/Backup/
 ONBUILD ADD models /root/Backup/models/
 ONBUILD ADD jobs.rb /root/Backup/
 
