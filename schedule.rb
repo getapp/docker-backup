@@ -1,5 +1,9 @@
-job_type :backup, 'source /root/Backup/.env && cd /root/Backup && bundle exec backup perform -t :task :output'
+# pass all env vars to cron job
+ENV.each { |(k, v)| env k, v }
+
 set :output, '/var/log/cron.log'
+
+job_type :backup, 'cd /root/Backup && bundle exec backup perform -t :task :output'
 
 models = Dir[File.join __dir__, 'models', '*.rb']
          .map { |p| File.basename(p, '.rb') }
