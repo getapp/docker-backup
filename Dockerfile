@@ -15,7 +15,6 @@ RUN backup generate:config
 ADD entrypoint.sh /opt/
 ADD schedule.rb /root/Backup/
 ONBUILD ADD models /root/Backup/models/
-ONBUILD ADD jobs.rb /root/Backup/
 
 WORKDIR /root/Backup
 

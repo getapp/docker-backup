@@ -1,1 +1,3 @@
-add `backup` gem models to `models` dir and create `jobs.rb` file with `whenever` gem syntax to schedule backups
+Add `backup` gem models to `models` dir. Model names must match filenames.
+
+To configure backup interval use `BACKUP_INTERVAL_VALUE` and `BACKUP_INTERVAL_UNIT` environment variables.
