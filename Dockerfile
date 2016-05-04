@@ -11,8 +11,8 @@ RUN apt-get update \
  RUN ln -fs /usr/local/bundle/bin/bundle /usr/bin/bundle
 
 WORKDIR /root/Backup
-ADD Gemfile /root/Backup
-ADD Gemfile.lock /root/Backup
+ADD Gemfile /root/Backup/
+ADD Gemfile.lock /root/Backup/
 RUN bundle install
 RUN backup generate:config
 
