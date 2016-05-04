@@ -1,4 +1,5 @@
 job_type :backup, 'source /root/Backup/.env && cd /root/Backup && backup perform -t :task'
+set :output, '/var/log/cron.log'
 
 models = Dir[File.join __dir__, 'models', '*.rb']
          .map { |p| File.basename(p, '.rb') }
