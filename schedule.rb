@@ -5,5 +5,5 @@ models = Dir[File.join __dir__, 'models', '*.rb']
          .map(&:to_sym)
 
 every ENV['BACKUP_INTERVAL'] do
-  models.each { backup model }
+  models.each { |m| backup m }
 end
