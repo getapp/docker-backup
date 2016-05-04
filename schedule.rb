@@ -1,4 +1,4 @@
-job_type :backup, 'source /root/Backup/.env && cd /root/Backup && backup perform -t :task :output'
+job_type :backup, 'source /root/Backup/.env && cd /root/Backup && bundle exec backup perform -t :task :output'
 set :output, '/var/log/cron.log'
 
 models = Dir[File.join __dir__, 'models', '*.rb']
